@@ -1,0 +1,29 @@
+components:
+  schemas:
+    User:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: number
+        login:
+          type: string
+        role:
+          type: string
+    RegisterRequestBody:
+      type: object
+      additionalProperties: false
+      properties:
+        login:
+          type: string
+        password:
+          type: string
+    LoginRequestBody:
+      type: object
+      additionalProperties: false
+      properties:
+        login:
+          type: string
+        password:
+          type: string
+          

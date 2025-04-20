@@ -1,0 +1,46 @@
+components:
+  schemas:
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        quantity:
+          type: number
+        price:
+          type: number
+        status:
+          type: string
+    Order:
+      type: object
+      properties:
+        id:
+          type: number
+        tableNumber:
+          type: number
+        status:
+          type: string
+        createdAt:  
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+    OrderItemRequestBody:
+      type: object
+      properties:
+        name:
+          type: string
+        quantity:
+          type: number
+    OrderRequestBody:
+      type: object
+      properties:
+        tableNumber:
+          type: number
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItemRequestBody'

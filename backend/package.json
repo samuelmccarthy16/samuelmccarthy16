@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w & nodemon dist/app.js",
+    "dev:win": "start /b tsc -w & nodemon dist/app.js",
+    "serve": "node dist/app.js",
+    "schemas:openapi": "npx swagger-jsdoc -d src/routes/definition.yaml src/routes/*.ts \"src/routes/!(definition).yaml\" -o src/schemas/openapi.json",
+    "schemas:types": "npx openapi-typescript src/schemas/openapi.json -o src/schemas/index.d.ts",
+    "copy-specs": "copyfiles -u 1 src/schemas/*.json dist",
+    "build:schemas": "npm run schemas:openapi & npm run schemas:types & npm run copy-specs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-openapi-validator": "^5.4.9",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "swagger-ui-express": "^5.0.1",
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.22",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/swagger-ui-express": "^4.1.8",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.9",
+    "openapi-typescript": "^7.6.1",
+    "swagger-jsdoc": "^6.2.8"
+  }
+}

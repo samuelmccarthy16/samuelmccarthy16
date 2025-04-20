@@ -1,0 +1,4 @@
+/backend/node_modules/
+/backend/bar.db
+/backend/dist/
+/.idea/
