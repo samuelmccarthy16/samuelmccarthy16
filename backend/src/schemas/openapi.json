@@ -204,6 +204,12 @@
               }
             }
           },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "500": {
             "$ref": "#/components/responses/InternalServerError"
           }
@@ -213,6 +219,16 @@
         "summary": "Get all orders",
         "tags": [
           "Order"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filter",
+            "schema": {
+              "type": "string"
+            },
+            "description": "order status filter"
+          }
         ],
         "responses": {
           "200": {
@@ -227,6 +243,12 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "500": {
             "$ref": "#/components/responses/InternalServerError"
@@ -250,6 +272,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "404": {
             "$ref": "#/components/responses/NotFoundError"
@@ -436,6 +461,7 @@
       },
       "OrderItemRequestBody": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"
@@ -447,6 +473,7 @@
       },
       "OrderRequestBody": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "tableNumber": {
             "type": "number"

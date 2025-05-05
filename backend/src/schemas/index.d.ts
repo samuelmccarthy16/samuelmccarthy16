@@ -146,7 +146,10 @@ export interface paths {
         /** Get all orders */
         get: {
             parameters: {
-                query?: never;
+                query?: {
+                    /** @description order status filter */
+                    filter?: string;
+                };
                 header?: never;
                 path?: never;
                 cookie?: never;
@@ -162,6 +165,8 @@ export interface paths {
                         "application/json": components["schemas"]["Order"][];
                     };
                 };
+                400: components["responses"]["BadRequestError"];
+                401: components["responses"]["UnauthorizedError"];
                 500: components["responses"]["InternalServerError"];
             };
         };
@@ -189,6 +194,8 @@ export interface paths {
                         "application/json": components["schemas"]["Order"];
                     };
                 };
+                400: components["responses"]["BadRequestError"];
+                401: components["responses"]["UnauthorizedError"];
                 500: components["responses"]["InternalServerError"];
             };
         };
@@ -224,6 +231,7 @@ export interface paths {
                         "application/json": components["schemas"]["Order"];
                     };
                 };
+                401: components["responses"]["UnauthorizedError"];
                 404: components["responses"]["NotFoundError"];
                 500: components["responses"]["InternalServerError"];
             };

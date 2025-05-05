@@ -25,12 +25,14 @@ const router = express.Router();
   *           application/json:
   *             schema:
   *               $ref: '#/components/schemas/Order'
+  *       400:
+  *         $ref: '#/components/responses/BadRequestError'
+  *       401:
+  *         $ref: '#/components/responses/UnauthorizedError'
   *       500:
   *         $ref: '#/components/responses/InternalServerError'
   */
 router.post("/", authenticate, OrderController.createOrder);
-
-// TODO: filter by order status
 
 /**
   * @openapi
@@ -38,6 +40,12 @@ router.post("/", authenticate, OrderController.createOrder);
   *   get:
   *     summary: Get all orders
   *     tags: [Order]
+  *     parameters:
+  *       - in: query
+  *         name: filter
+  *         schema:
+  *           type: string
+  *         description: order status filter
   *     responses:
   *       200:
   *         description: List of all orders
@@ -47,6 +55,10 @@ router.post("/", authenticate, OrderController.createOrder);
   *               type: array
   *               items:
   *                 $ref: '#/components/schemas/Order'
+  *       400:
+  *         $ref: '#/components/responses/BadRequestError'
+  *       401:
+  *         $ref: '#/components/responses/UnauthorizedError'
   *       500:
   *         $ref: '#/components/responses/InternalServerError'
   */
@@ -65,6 +77,8 @@ router.get("/", authorize('staff'), OrderController.getOrders);
   *           application/json:
   *             schema:
   *                 $ref: '#/components/schemas/Order'
+  *       401:
+  *         $ref: '#/components/responses/UnauthorizedError'
   *       404:
   *         $ref: '#/components/responses/NotFoundError'
   *       500:

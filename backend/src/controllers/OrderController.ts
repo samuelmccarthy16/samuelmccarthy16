@@ -5,12 +5,17 @@ import { OrderItem } from "../entities/OrderItem";
 import { MenuItem } from "../entities/MenuItem";
 import { ErrorDto, OrderDto, OrderRequestBodyDto } from "../types";
 
-export const createOrder = async (req: Request<{}, OrderDto | ErrorDto>, res: Response) => {
+export const createOrder = async (req: Request<OrderRequestBodyDto, OrderDto | ErrorDto>, res: Response) => {
   try {
     const orderRepository = getRepository(Order);
     const orderItemsRepository = getRepository(OrderItem);
     try {
       const { items, tableNumber } = req.body;
+
+      if (!items || !tableNumber) {
+        res.status(400).send({ message: 'Unable to create order' });
+        return;
+      }
 
       const newOrder = orderRepository.create({
         tableNumber,
@@ -58,7 +63,20 @@ export const getOrders = async (req: Request<{}, OrderDto[] | ErrorDto>, res: Re
   try {
     const orderRepository = getRepository(Order);
     const orders = await orderRepository.find({ relations: ["items"] });
-    res.json(orders.map(o => formatOrderToResponse(o)));
+
+    const { filter } = req.query;
+
+    if (!filter) {
+      res.json(orders.map(o => formatOrderToResponse(o)));
+      return;
+    }
+
+    if (typeof filter !== 'string' || !["pending", "preparing", "ready", "served"].includes(filter)) {
+      res.status(400).send({ message: 'Incorrect filter' });
+      return;
+    }
+
+    res.json(orders.filter(o => o.status === filter).map(o => formatOrderToResponse(o)));
   } catch (error) {
     if (error instanceof Error) {
       res.status(500).json({ message: error.message });

@@ -22,7 +22,7 @@ components:
           type: number
         status:
           type: string
-        createdAt:  
+        createdAt:
           type: string
         items:
           type: array
@@ -30,6 +30,7 @@ components:
             $ref: '#/components/schemas/OrderItem'
     OrderItemRequestBody:
       type: object
+      additionalProperties: false
       properties:
         name:
           type: string
@@ -37,6 +38,7 @@ components:
           type: number
     OrderRequestBody:
       type: object
+      additionalProperties: false
       properties:
         tableNumber:
           type: number
