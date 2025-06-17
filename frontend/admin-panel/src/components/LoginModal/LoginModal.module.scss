@@ -1,0 +1,19 @@
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 48px;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

@@ -25,6 +25,7 @@ export const authorize = (requiredRole: 'user' | 'staff' | 'admin') => {
     const token = req.cookies?.token;
 
     if (!token) {
+      console.log('>>> NO TOKEN');
       res.status(401).json({ message: 'Authentication required' });
       return;
     }

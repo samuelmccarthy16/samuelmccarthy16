@@ -9,6 +9,7 @@ import userRoutes from "./routes/userRoutes";
 import apiDocsRouter from './routes/apidoc';
 import {createAdminIfNotExists} from "./controllers/AdminController";
 import { openApiValidator } from "./middlewares";
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
@@ -16,7 +17,13 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(openApiValidator);
+//app.use(openApiValidator);
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+}));
+//app.options('*', cors());
 
 createConnection({
   type: "sqlite",

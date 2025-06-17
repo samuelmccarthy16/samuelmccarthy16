@@ -21,6 +21,7 @@
     "@types/node": "^22.14.0",
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-openapi-validator": "^5.4.9",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.19",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/swagger-ui-express": "^4.1.8",
     "copyfiles": "^2.4.1",

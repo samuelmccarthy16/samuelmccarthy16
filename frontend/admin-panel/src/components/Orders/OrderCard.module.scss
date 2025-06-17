@@ -1,0 +1,23 @@
+.card {
+  border: 1px solid #e4e4e4;
+  text-align: left;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.itemsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.status {
+  select {
+    margin-left: 8px;
+  }
+}

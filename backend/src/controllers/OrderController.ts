@@ -105,6 +105,34 @@ export const getOrderById = async (req: Request<{id: string}, OrderDto | ErrorDt
   }
 };
 
+export const updateOrderStatus = async (req: Request<{id: string}, OrderDto | ErrorDto>, res: Response) => {
+  try {
+    const orderRepository = getRepository(Order);
+    const orderItemsRepository = getRepository(OrderItem);
+    const { id, status } = req.body;
+    if (!id || !status || !["pending", "preparing", "ready", "served"].includes(status)) {
+      res.status(400).send({ message: 'Unable to update order status' });
+      return;
+    }
+    const foundOrder = await orderRepository.findOne({ where: { id } });
+    if (!foundOrder) {
+      res.status(404).json({ message: "Order not found" });
+      return;
+    }
+    const updatedOrder = orderRepository.merge(foundOrder, { status });
+    await orderRepository.save(updatedOrder);
+    res.json(formatOrderToResponse(updatedOrder));
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ message: error.message });
+    } else {
+      res.status(500).json({ message: 'Unknown error' });
+    }
+  }
+};
+
+
+
 const formatOrderToResponse = (order: Order): OrderDto => {
   return {
     ...order,

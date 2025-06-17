@@ -1,0 +1,37 @@
+.loginbtn {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+}
+
+.nav {
+    /*position: fixed;
+    top: 0;*/
+    width: 100%;
+
+    > button:first-child {
+        margin-right: 8px;
+    }
+
+    button {
+        height: 42px;
+    }
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+    background-color: #444;
+    min-height: 42px;
+}
+
+.name {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 14px;
+    font-size: 20px;
+    background-color: #444;
+}

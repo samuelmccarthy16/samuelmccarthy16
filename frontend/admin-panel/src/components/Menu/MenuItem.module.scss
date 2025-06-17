@@ -1,0 +1,19 @@
+.itemCard {
+  border: 1px solid #e4e4e4;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+
+  .description {
+    text-align: left;
+  }
+
+  .actions {
+    flex-shrink: 0;
+    > button:first-child {
+      margin-right: 8px;
+    }
+  }
+}

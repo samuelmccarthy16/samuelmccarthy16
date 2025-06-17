@@ -1,0 +1,7 @@
+.app {
+  width: 100%;
+
+  > *:nth-child(2) {
+    margin: auto 12%;
+  }
+}
