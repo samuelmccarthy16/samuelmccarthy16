@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Сэмюэл Маккарти Свен - Портфолио менеджера по продажам</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+  /* Стили те же, что и в английской версии */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  header p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  nav {
+    margin-top: 15px;
+  }
+  nav a {
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #3498db;
+  }
+  section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #2980b9;
+  }
+  /* Остальные стили — копируем из английской версии */
+  /* ... (оставьте здесь все ваши стили) ... */
+</style>
+</head>
+<body>
+
+<!-- Язык переключатель -->
+<nav style="padding:10px; text-align:center;">
+  <select onchange="if (this.value) window.location.href=this.value;">
+    <option value="index-en.html">Английский</option>
+    <option value="index-ru.html" selected>Русский</option>
+  </select>
+</nav>
+
+<!-- Заголовок -->
+<header class="animate__animated animate__fadeInDown">
+  <h1>Самуель Маккарти Свен</h1>
+  <p>Менеджер по продажам | B2B, B2C, B2G | ИТ и Финтех решения</p>
+  <nav>
+    <a href="#about">Обо мне</a>
+    <a href="#services">Мои услуги</a>
+    <a href="#portfolio">Портфолио</a>
+    <a href="#clients">Клиенты</a>
+    <a href="#contact">Записаться</a>
+  </nav>
+</header>
+
+<!-- Обо мне -->
+<section id="about" class="animate__animated animate__fadeInUp">
+  <h2>Обо мне</h2>
+  <div class="about">
+    <div class="about-img">
+     <img src="samp.jpg" alt="Самуель Маккарти Свен" />
+    </div>
+    <div class="about-text">
+      <p>Здравствуйте! Я Сэмюэл Маккарти Свен, ориентированный на результат менеджер по продажам, специализирующийся на крупномасштабных контрактах и технологических решениях на международных рынках. Умело взаимодействую с клиентами в секторах B2B, B2C и B2G, использую CRM-инструменты, такие как Bitrix24, для предоставления индивидуальных решений и стимулирования роста.</p>
+      <p>Моя цель — предоставлять инновационные ИТ и финтех решения, строить прочные отношения и постоянно превышать планы продаж.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Мои услуги -->
+<section id="services" class="animate__animated animate__fadeInUp">
+  <h2>Мои услуги</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Развитие бизнеса</h3>
+      <p>Выявляйте возможности и расширяйте ваше присутствие на глобальных рынках технологий и финтеха.</p>
+    </div>
+    <div class="service-card">
+      <h3>Высокопрофильные переговоры</h3>
+      <p>Заключение крупных контрактов с государственными, институциональными, частными и корпоративными клиентами.</p>
+    </div>
+    <div class="service-card">
+      <h3>Работа с клиентами</h3>
+      <p>Создание стратегических партнерств с индивидуальными решениями для долгосрочного успеха.</p>
+    </div>
+    <div class="service-card">
+      <h3>Стратегия выхода на рынок</h3>
+      <p>Эффективное позиционирование продуктов на различных рынках для максимизации влияния.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Портфолио -->
+<section id="portfolio" class="animate__animated animate__fadeInUp">
+  <h2>Мое портфолио</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/400x250.png?text=Deal+1" alt="Крупная сделка" />
+      <h4>Крупная сделка с Либерией</h4>
+      <p>Заключил сделку на 100 000 долларов США по поставке оборудования для тестирования лекарств с правительством.</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/400x250.png?text=Deal+2" alt="ИТ услуги" />
+      <h4>ИТ-поддержка исследовательского института</h4>
+      <p>Предоставил ИТ-услуги и оборудование на сумму 30 000 долларов США для международного института.</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/400x250.png?text=Education+Solutions" alt="Образовательное ПО" />
+      <h4>Продажа образовательного программного обеспечения</h4>
+      <p>Расширил рынок школ в Африке с помощью образовательных решений.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Клиенты и отзывы -->
+<section id="clients" class="animate__animated animate__fadeInUp">
+  <h2>Клиенты и отзывы</h2>
+  <div class="reviews">
+    <div class="review">
+      <h4>Правительство Либерии</h4>
+      <p>"Навыки переговоров Сэмюэла обеспечили контракт на 100 000 долларов США для передового оборудования для тестирования лекарств, что демонстрирует его экспертность в работе с государственными клиентами."</p>
+    </div>
+    <div class="review">
+      <h4>Исследовательский институт Либерии</h4>
+      <p>"Благодаря Сэмюэлу мы приобрели компьютеры и ИТ-услуги на сумму 30 000 долларов США. Его профессионализм и стратегический подход оказали значительное влияние."</p>
+    </div>
+    <div class="review">
+      <h4>Африканские школы</h4>
+      <p>"Сэмюэл продал множество решений для образовательного ПО, расширяя наш охват по всему континенту благодаря стратегическому взаимодействию с клиентами."</p>
+    </div>
+  </div>
+</section>
+
+<!-- Запись на консультацию -->
+<section id="contact" class="contact-section animate__animated animate__fadeInUp">
+  <h3>Записаться на консультацию</h3>
+  <form id="contactForm">
+    <label for="name">Имя</label>
+    <input type="text" id="name" placeholder="Ваше имя" required />
+
+    <label for="email">Электронная почта</label>
+    <input type="email" id="email" placeholder="Ваша электронная почта" required />
+
+    <label for="message">Сообщение</label>
+    <textarea id="message" rows="4" placeholder="Расскажите о ваших потребностях..." required></textarea>
+
+    <button type="submit">Отправить запрос</button>
+  </form>
+  <div id="formResponse" style="display:none; margin-top:15px; color:green; font-weight:bold;">Спасибо! Ваша заявка отправлена.</div>
+</section>
+
+<!-- Подвал -->
+<footer>
+  <p>&copy; 2024 Сэмюэл Маккарти Свен. Все права защищены.</p>
+  <div style="margin-top:10px;">
+    <a href="https://linkedin.com/in/yourprofile" target="_blank" style="margin:0 10px;"><i class="fab fa-linkedin"></i></a>
+    <a href="https://twitter.com/yourprofile" target="_blank" style="margin:0 10px;"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+<!-- Скрипты -->
+<script src="https://cdn.emailjs.com/sdk/latest/email.min.js"></script>
+<script>
+  // Инициализация EmailJS (замените 'YOUR_EMAILJS_USER_ID' на ваш ID)
+  emailjs.init('YOUR_EMAILJS_USER_ID');
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      from_name: document.getElementById('name').value,
+      reply_to: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    })
+    .then(function(response) {
+       document.getElementById('formResponse').style.display = 'block';
+       document.getElementById('contactForm').reset();
+       setTimeout(() => {
+         document.getElementById('formResponse').style.display = 'none';
+       }, 4000);
+    }, function(error) {
+       alert('Ошибка при отправке сообщения. Попробуйте еще раз.');
+    });
+  });
+</script>
+
+</body>
+</html>
